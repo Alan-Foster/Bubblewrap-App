@@ -24,5 +24,7 @@ https://developers.reddit.com/apps/bubblewrap-app
 
 ## Changelog
 
-* 0.0.2 - The app finally works now!
-* 0.0.1 - Initial Launch and Testing
+* 0.4.0 - Added rounded corners to bubbles. Background is now bubble-blue.
+* 0.3.0 - Added instructions. Changed backgroud color. Got a cup of tea.
+* 0.2.0 - The app finally works now!
+* 0.1.0 - Initial Launch and Testing

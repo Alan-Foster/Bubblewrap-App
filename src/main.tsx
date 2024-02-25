@@ -14,20 +14,19 @@ Devvit.addMenuItem({
     await reddit.submitPost({
       title: 'Bubblewrap for Everyone!',
       subredditName: subreddit.name,
-      // The preview appears while the post loads
       preview: (
-        <vstack height="100%" width="100%" alignment="middle center">
+        <vstack height="100%" width="100%" alignment="middle center" backgroundColor="#000000">
           <text size="large">Loading ...</text>
         </vstack>
       ),
     });
-    ui.showToast({ text: 'Created post!' });
+    ui.showToast({ text: 'Bubblewrap Custom Post Created!' });
   },
 });
 
 const resolution = 12;
-const size = 22;
-const colors = ["#000000","#FFFFFF",];
+const size = 24; // Adjust size if necessary
+const colors = ["#FFFFFF","#d7e5fc"]; // Adds white and light blue as primary bubble wrap colors
 const blankCanvas = new Array(resolution * resolution).fill(0);
 const clickedBoxes = new Array(resolution * resolution).fill(false);
 
@@ -37,6 +36,7 @@ Devvit.addCustomPostType({
     const { useState } = context;
     const [data, setData] = useState(blankCanvas);
     const [clicked, setClicked] = useState(clickedBoxes);
+    
     const pixels = data.map((pixel, index) => (
       <hstack
         key={index}
@@ -50,8 +50,9 @@ Devvit.addCustomPostType({
         }}
         height={`${size}px`}
         width={`${size}px`}
-        backgroundColor={clicked[index] ? colors[1] : colors[0]}
+        backgroundColor={clicked[index] ? colors[0] : colors[1]}
         alignment="middle center"
+        cornerRadius="small"
       >
         {clicked[index] && (
           <text color="black" weight="bold" size="xsmall">
@@ -61,7 +62,10 @@ Devvit.addCustomPostType({
       </hstack>
     ));
 
-    const gridSize = `${resolution * size}px`;
+    const height = resolution * size;
+    const width = Math.round(height * 1);
+    const gridSizeWidth = `${width}px`;
+    const gridSizeHeight = `${height}px`;
 
     function splitArray<T>(array: T[], segmentLength: number): T[][] {
       const result: T[][] = [];
@@ -75,8 +79,9 @@ Devvit.addCustomPostType({
       <vstack
         cornerRadius="small"
         border="thin"
-        height={gridSize}
-        width={gridSize}
+        height={gridSizeHeight}
+        width={gridSizeWidth}
+        backgroundColor="#d7e5fc" // Set the canvas background to light blue, same as unclicked boxes
       >
         {splitArray(pixels, resolution).map((row, rowIndex) => (
           <hstack key={rowIndex}>{row}</hstack>
@@ -86,7 +91,8 @@ Devvit.addCustomPostType({
     
     return (
       <blocks>
-        <vstack gap="small" width="100%" height="100%" alignment="center middle">
+        <vstack gap="small" width="100%" height="100%" alignment="center middle" backgroundColor="#555555">
+          <text color="white" weight="bold" size="medium">Click Below to Play with Bubblewrap!</text>
           <Canvas />
         </vstack>
       </blocks>
