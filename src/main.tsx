@@ -38,7 +38,7 @@ Devvit.addCustomPostType({
           setClicked(newClicked);
         }}
         height={`${size}px`}
-        width={`${size}px`}
+        width={`${size * 1.11}px`} // Problem with overflow of "Pop!" text workaround increading width
       >
         <hstack
           height="100%"
