@@ -7,7 +7,11 @@ Devvit.configure({
 import { addBubblewrapMenuItem } from './addBubblewrapMenuItem';
 addBubblewrapMenuItem();
 
-const resolution = 7;
+Devvit.configure({
+  redditAPI: true,
+});
+
+const resolution = 10;
 const size = 32;
 const colors = ["#FFFFFF","#d7e5fc"];
 const blankCanvas = new Array(resolution * resolution).fill(0);
@@ -63,10 +67,10 @@ Devvit.addCustomPostType({
       </vstack>
     ));
 
-    const height = resolution * size;
-    const width = Math.round(height);
-    const gridSizeWidth = `${width}px`;
-    const gridSizeHeight = `${height}px`;
+    const height = resolution * size * 1.01;
+    const width = Math.round(height * 1.15);
+    const gridSizeWidth = `${width * 1.00}px`;
+    const gridSizeHeight = `${height * 0.70}px`;
 
     function splitArray<T>(array: T[], segmentLength: number): T[][] {
       const result: T[][] = [];
