@@ -24,6 +24,7 @@ https://developers.reddit.com/apps/bubblewrap-app
 
 ## Changelog
 
+* 0.0.9 - Removed "height: tall" preventing Reset button showing on Desktop. Adjusted dimensions accordingly.
 * 0.0.8 - Resolved overflow problem where "Pop!" was showing as "Po..."
 * 0.0.7 - Added bubble reset button. Unnescessary code cleanup. Finished the bagel.
 * 0.0.6 - Final color adjustments, it actually looks like bubblewrap! Moved addMenuItem to seperate file. Ate half a bagel.

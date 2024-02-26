@@ -15,7 +15,7 @@ const clickedBoxes = new Array(resolution * resolution).fill(false);
 
 Devvit.addCustomPostType({
   name: 'Bubblewrap',
-  height: 'tall',
+  // height: 'tall' // Temporarily disabled Tall height because it doesn't function on Desktop
   render: context => {
     const { useState } = context;
     const [data, setData] = useState(blankCanvas);
@@ -38,7 +38,7 @@ Devvit.addCustomPostType({
           setClicked(newClicked);
         }}
         height={`${size}px`}
-        width={`${size * 1.11}px`} // Problem with overflow of "Pop!" text workaround increading width
+        width={`${size * 1.16}px`} // Problem with overflow of "Pop!" text workaround increasing width
       >
         <hstack
           height="100%"
