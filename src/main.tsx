@@ -7,7 +7,7 @@ Devvit.configure({
 import { addBubblewrapMenuItem } from './addBubblewrapMenuItem';
 addBubblewrapMenuItem();
 
-const resolution = 10;
+const resolution = 7;
 const size = 32;
 const colors = ["#FFFFFF","#d7e5fc"]; // Adds white and light blue as primary bubblewrap colors
 const blankCanvas = new Array(resolution * resolution).fill(0);
