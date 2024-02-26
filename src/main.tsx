@@ -4,7 +4,7 @@ Devvit.configure({
   redditAPI: true,
 });
 
-import { addBubblewrapMenuItem } from '/addBubblewrapMenuItem';
+import { addBubblewrapMenuItem } from './addBubblewrapMenuItem';
 addBubblewrapMenuItem();
 
 const resolution = 10;
@@ -15,13 +15,19 @@ const clickedBoxes = new Array(resolution * resolution).fill(false);
 
 Devvit.addCustomPostType({
   name: 'Bubblewrap',
+  height: 'tall',
   render: context => {
     const { useState } = context;
     const [data, setData] = useState(blankCanvas);
     const [clicked, setClicked] = useState(clickedBoxes);
 
+    const resetBubbles = () => {
+      setData([...blankCanvas]);
+      setClicked([...clickedBoxes]);
+    };
+
     const pixels = data.map((pixel, index) => (
-      <vstack // Parent container to handle the click
+      <vstack
         key={index}
         onPress={() => {
           const newData = [...data];
@@ -34,10 +40,10 @@ Devvit.addCustomPostType({
         height={`${size}px`}
         width={`${size}px`}
       >
-        <hstack // Child with rounded corners for visual effect
+        <hstack
           height="100%"
           width="100%"
-          backgroundColor={clicked[index] ? colors[1] : colors[0]} //Sets background colors of bubbles depending on state
+          backgroundColor={clicked[index] ? colors[1] : colors[0]}
           cornerRadius="medium"
           alignment="center middle"
         >
@@ -69,7 +75,7 @@ Devvit.addCustomPostType({
         border="thin"
         height={gridSizeHeight}
         width={gridSizeWidth}
-        backgroundColor="#d7e5fc" // The color of the bubblewrap spaces outside bubbles (constant color)
+        backgroundColor="#d7e5fc"
       >
         {splitArray(pixels, resolution).map((row, rowIndex) => (
           <hstack key={rowIndex}>{row}</hstack>
@@ -80,10 +86,16 @@ Devvit.addCustomPostType({
     return (
       <blocks>
         <vstack gap="small" width="100%" height="100%" alignment="center" backgroundColor="transparent">
-          <vstack backgroundColor="#888888" padding="small" cornerRadius="medium">
-            <text color="white" weight="bold" size="medium">Click Below to Play with Bubblewrap!</text>
+          <vstack backgroundColor="#d7e5fc" padding="small" cornerRadius="medium">
+            <text color="black" weight="bold" size="medium">
+              Click Below to Play with Bubblewrap!
+            </text>
           </vstack>
           <Canvas />
+          {/* Reset Button */}
+          <button onPress={resetBubbles}>
+            Reset Bubbles
+          </button>
         </vstack>
       </blocks>
     )

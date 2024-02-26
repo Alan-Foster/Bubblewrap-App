@@ -24,7 +24,8 @@ https://developers.reddit.com/apps/bubblewrap-app
 
 ## Changelog
 
-* 0.0.6 - More color adjustments. Moved addMenuItem to new file. Ate half a bagel.
+* 0.0.7 - Added bubble reset button. Unnescessary code cleanup. Finished the bagel.
+* 0.0.6 - Final color adjustments, it actually looks like bubblewrap! Moved addMenuItem to seperate file. Ate half a bagel.
 * 0.0.5 - Background is now transparent. Added background to instructions.
 * 0.0.4 - Added rounded corners to bubbles. Background is now bubble-blue.
 * 0.0.3 - Added instructions. Changed backgroud color. Got a cup of tea.
