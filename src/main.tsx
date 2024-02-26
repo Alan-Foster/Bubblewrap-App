@@ -9,21 +9,23 @@ addBubblewrapMenuItem();
 
 const resolution = 7;
 const size = 32;
-const colors = ["#FFFFFF","#d7e5fc"]; // Adds white and light blue as primary bubblewrap colors
+const colors = ["#FFFFFF","#d7e5fc"];
 const blankCanvas = new Array(resolution * resolution).fill(0);
 const clickedBoxes = new Array(resolution * resolution).fill(false);
 
 Devvit.addCustomPostType({
   name: 'Bubblewrap',
-  // height: 'tall' // Temporarily disabled Tall height because it doesn't function on Desktop
   render: context => {
     const { useState } = context;
     const [data, setData] = useState(blankCanvas);
     const [clicked, setClicked] = useState(clickedBoxes);
+    // Initialize the popped counter state
+    const [poppedCount, setPoppedCount] = useState(0);
 
     const resetBubbles = () => {
       setData([...blankCanvas]);
       setClicked([...clickedBoxes]);
+      setPoppedCount(0); // Reset the popped counter
     };
 
     const pixels = data.map((pixel, index) => (
@@ -31,14 +33,18 @@ Devvit.addCustomPostType({
         key={index}
         onPress={() => {
           const newData = [...data];
+          const newClicked = [...clicked];
+          // Only increment if the bubble hasn't been popped yet
+          if (!newClicked[index]) {
+            setPoppedCount(poppedCount + 1);
+          }
           newData[index] = 1;
           setData(newData);
-          const newClicked = [...clicked];
           newClicked[index] = true;
           setClicked(newClicked);
         }}
         height={`${size}px`}
-        width={`${size * 1.16}px`} // Problem with overflow of "Pop!" text workaround increasing width
+        width={`${size * 1.16}px`}
       >
         <hstack
           height="100%"
@@ -88,11 +94,10 @@ Devvit.addCustomPostType({
         <vstack gap="small" width="100%" height="100%" alignment="center" backgroundColor="transparent">
           <vstack backgroundColor="#d7e5fc" padding="small" cornerRadius="medium">
             <text color="black" weight="bold" size="medium">
-              Click Below to Play with Bubblewrap!
+              Bubbles Popped: {poppedCount}
             </text>
           </vstack>
           <Canvas />
-          {/* Reset Button */}
           <button onPress={resetBubbles}>
             Reset Bubbles
           </button>
@@ -101,5 +106,3 @@ Devvit.addCustomPostType({
     )
   }
 })
-
-export default Devvit;
