@@ -24,7 +24,8 @@ https://developers.reddit.com/apps/bubblewrap-app
 
 ## Changelog
 
-* 0.0.10 - Added a bubble counter to replace instructions at top.
+* 0.0.11 - Added bubble counter to top of app.
+* 0.0.10 - Oh God Everything is Broken Why Didn't I Become A Dentist
 * 0.0.9 - Removed "height: tall" preventing Reset button showing on Desktop. Adjusted dimensions accordingly.
 * 0.0.8 - Resolved overflow problem where "Pop!" was showing as "Po..."
 * 0.0.7 - Added bubble reset button. Unnescessary code cleanup. Finished the bagel.

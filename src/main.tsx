@@ -15,6 +15,7 @@ const clickedBoxes = new Array(resolution * resolution).fill(false);
 
 Devvit.addCustomPostType({
   name: 'Bubblewrap',
+  height: 'tall', // Temporarily disabled Tall height because it doesn't function on Desktop
   render: context => {
     const { useState } = context;
     const [data, setData] = useState(blankCanvas);
@@ -93,9 +94,10 @@ Devvit.addCustomPostType({
       <blocks>
         <vstack gap="small" width="100%" height="100%" alignment="center" backgroundColor="transparent">
           <vstack backgroundColor="#d7e5fc" padding="small" cornerRadius="medium">
-            <text color="black" weight="bold" size="medium">
-              Bubbles Popped: {poppedCount}
-            </text>
+          {/* Display the popped counter */}
+          <text color="black" size="medium">
+            Bubbles Popped: {poppedCount}
+          </text>
           </vstack>
           <Canvas />
           <button onPress={resetBubbles}>
@@ -106,3 +108,5 @@ Devvit.addCustomPostType({
     )
   }
 })
+
+export default Devvit;
