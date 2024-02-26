@@ -24,6 +24,7 @@ https://developers.reddit.com/apps/bubblewrap-app
 
 ## Changelog
 
+* 0.2.0 - Completely redesigned the height and width bubble generation code.
 * 0.1.0 - Learned how version control works. Somehow figured out how to increase app width
 * 0.0.11 - Added bubble counter to top of app.
 * 0.0.10 - Oh God Everything is Broken Why Didn't I Become A Dentist
