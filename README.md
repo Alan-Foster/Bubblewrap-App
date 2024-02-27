@@ -1,17 +1,41 @@
 # Bubblewrap
 
-A simple game that users can play by clicking icons in a grid. 
-Originally a copypasta post minigame made from combining spoilers, this uses Custom Posts for the same effect.
+A simple game that users can play by clicking bubble icons in a grid. 
+Originally a copypasta comment minigame made from combining spoilers, 
+this uses Custom Posts for the same effect.
 
+The primary purpose of this app is not for entertainment, but for education. 
+This app is part of an ongoing video series showcasing how apps can be created on the Reddit Developer Platform.
+If I can build an app like this, so can you!
+
+Direct Link to This Page:
 https://developers.reddit.com/apps/bubblewrap-app
+
+Link to the YouTube Guide Video:
+(Place a Link Here)
 
 ## Features
 
+* How to go through documentation to understand a new platform
+* Use of // in-line documentation, to provide notes for other developers or temporarily disable code
+* Teaches addMenuItem functionality to create a post with the app
+* Examples of inline CSS styling within JSX, and how proper formatting makes reading easier
+* Shows the segmentation of code into different files and importing for use in main.tsx
+* Introduces the concept of React Hooks (useState, useEffect) for side effects in components
+* Dynamic list rendering using arrays to load bubbles in rows and columns
+* Interactive buttons that teaches event handling and state management of popped vs unpopped bubbles
+* Shows the actual process of creating an app, including the emotional ups and downs
+
+
+## Benefits
+
+* A fun and simple way to review a Reddit Devvit app, and build your own!
+* Get frustrated with coding and distract yourself with the app instead!
 * Spend years of your life playing with virtual bubblewrap!
 * Show your friends and family and get them addicted too!
 * Start a cult around bubblewrap and the joy it brings!
 
-## Install and Configuration
+## Add a Custom Post to your Subreddit
 
 * To the right of the "About Community" section at the top of your subreddit, click the Subreddit Menu dropdown (...) button
 * Select the option "Add a Bubblewrap Game" and wait 5-10 seconds for the green confirmation message
