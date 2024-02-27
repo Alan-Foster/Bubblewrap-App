@@ -1,8 +1,4 @@
-import { Devvit } from '@devvit/public-api'
 
-Devvit.configure({
-  redditAPI: true,
-});
 
 import { addBubblewrapMenuItem } from './addBubblewrapMenuItem';
 addBubblewrapMenuItem();
