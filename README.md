@@ -48,6 +48,7 @@ Link to the YouTube Guide Video:
 
 ## Changelog
 
+* 0.3.0 - Updating to Devvit 0.11.4. Adding Realtime multiplayer with other users
 * 0.2.0 - Completely redesigned the height and width bubble generation code.
 * 0.1.0 - Learned how version control works. Somehow figured out how to increase app width
 * 0.0.11 - Added bubble counter to top of app.
