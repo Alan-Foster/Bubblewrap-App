@@ -47,7 +47,7 @@ Link to the YouTube Guide Video:
 * App is still in early development. Images Coming Soon!
 
 ## Changelog
-
+* 0.3.1 - Added loading screen and optimized code a bit
 * 0.3.0 - Updating to Devvit 0.11.4. Adding Realtime multiplayer with other users
 * 0.2.0 - Completely redesigned the height and width bubble generation code.
 * 0.1.0 - Learned how version control works. Somehow figured out how to increase app width
